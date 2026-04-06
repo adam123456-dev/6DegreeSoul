@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+/* Display serif — matches luxury / pageant editorial direction (reference mockups) */
+.font-serif {
+  font-family: 'Cinzel', Georgia, 'Times New Roman', serif;
+  letter-spacing: 0.06em;
+}
+
+.font-elegant {
+  font-family: 'Cinzel', Georgia, serif;
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
