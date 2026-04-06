@@ -72,6 +72,20 @@ export default function LivingPrimaryCta({
 
   const linkClass = cn(className, flowingGradient && "btn-gold-flow");
 
+  const hasFullWidth = Boolean(className?.includes("w-full"));
+
+  /** Match link width: `w-full sm:w-auto` on the link needs `sm:w-fit` on the wrapper or the span stays full-width. */
+  const wrapperWidth = (() => {
+    if (!hasFullWidth) return "";
+    if (className.includes("sm:w-auto") || className.includes("md:w-auto") || className.includes("lg:w-auto")) {
+      return "w-full min-w-0 sm:w-fit max-w-full";
+    }
+    return "w-full";
+  })();
+
+  /** In `flex-col`, default stretch makes `inline-flex` wrappers full-width while the link stays narrow — phantom hit area. */
+  const wrapperSelf = !hasFullWidth ? "self-center" : "";
+
   if (reduceMotion) {
     return (
       <Link to={to} className={linkClass} onClick={onClick}>
@@ -82,7 +96,7 @@ export default function LivingPrimaryCta({
 
   return (
     <motion.span
-      className={cn("inline-flex", wrapperClassName, className?.includes("w-full") && "w-full")}
+      className={cn("inline-flex", wrapperClassName, wrapperWidth, wrapperSelf)}
       animate={flowingGradient ? nudgeAnimate : glowPulseAnimate}
       transition={flowingGradient ? nudgeTransition : glowPulseTransition}
     >

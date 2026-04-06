@@ -65,7 +65,7 @@ export default function Home() {
               Luxury Private Tours &amp; Transformational Retreats with Ms. Hawaii United USA 2025
             </motion.p>
             <motion.div
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 items-center"
               variants={{
                 hidden: { opacity: 0, y: 16 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.64, ease: easeOutLux } },
@@ -470,14 +470,17 @@ export default function Home() {
             <p className="text-[#4f4a44] text-base sm:text-lg font-light leading-relaxed mb-10 max-w-xl mx-auto">
               Plan your personalized escape today and experience the true spirit!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <LivingPrimaryCta to="/contact" className="btn-gold justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <LivingPrimaryCta
+                to="/contact"
+                className="btn-gold justify-center w-full min-w-0 sm:w-auto"
+              >
                 Plan your experience
                 <ArrowRight size={20} />
               </LivingPrimaryCta>
               <Link
                 to="/tours"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-[#b84838]/35 bg-white/90 px-8 py-4 text-[#2a2418] font-medium hover:bg-white transition-colors shadow-sm"
+                className="inline-flex w-full min-w-0 sm:w-auto items-center justify-center gap-2 rounded-lg border-2 border-[#b84838]/35 bg-white/90 px-8 py-4 text-[#2a2418] font-medium hover:bg-white transition-colors shadow-sm"
               >
                 Browse VIP tours
               </Link>
