@@ -1,5 +1,7 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
+import LivingPrimaryCta from "../components/LivingPrimaryCta";
+import { easeOutLux } from "../motion/presets";
 import { Heart, Star, Sparkles, ArrowRight, Crown } from "lucide-react";
 import nicolePortrait from "../../assets/nicole-subpage.jpg";
 import aboutSectionBg from "../../assets/about-section.png";
@@ -190,18 +192,19 @@ export default function About() {
         <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_20%,rgba(212,175,55,0.35),transparent_50%)]" />
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.68, ease: easeOutLux }}
           >
             <h2 className="font-serif text-4xl sm:text-5xl mb-6">Let&apos;s talk specifics</h2>
             <p className="text-lg text-white/85 mb-10 font-light">
               Dates, islands, group size, what you&apos;re navigating—send it. I read every inquiry myself.
             </p>
-            <Link to="/contact" className="btn-gold inline-flex">
+            <LivingPrimaryCta to="/contact" className="btn-gold inline-flex">
               Contact Nicole
               <ArrowRight size={22} />
-            </Link>
+            </LivingPrimaryCta>
           </motion.div>
         </div>
       </section>

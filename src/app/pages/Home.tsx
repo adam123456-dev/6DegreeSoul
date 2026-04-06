@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Sparkles, Heart, Users, ArrowRight, Star, ChevronRight } from "lucide-react";
 import AsSeenInStrip from "../components/AsSeenInStrip";
+import LivingPrimaryCta from "../components/LivingPrimaryCta";
 import { easeOutLux, fadeUpProps, fadeScaleProps, viewReveal } from "../motion/presets";
 import { brandImages } from "../../data/brandImages";
 import { homeAssets } from "../../data/homeAssets";
@@ -42,14 +43,14 @@ export default function Home() {
             animate="visible"
             variants={{
               hidden: {},
-              visible: { transition: { staggerChildren: 0.12, delayChildren: 0.18 } },
+              visible: { transition: { staggerChildren: 0.1, delayChildren: 0.14 } },
             }}
           >
             <motion.h1
               className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-[2.75rem] leading-[1.15] mb-5 text-[#1a1614] [text-shadow:0_0_28px_rgba(255,252,248,0.95)]"
               variants={{
-                hidden: { opacity: 0, y: 26 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.82, ease: easeOutLux } },
+                hidden: { opacity: 0, y: 22 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.78, ease: easeOutLux } },
               }}
             >
               Experience Hawaii Like Never Before
@@ -57,8 +58,8 @@ export default function Home() {
             <motion.p
               className="text-[#3d3429] text-base sm:text-lg leading-relaxed mb-9 font-normal border-l-[3px] border-amber-600/80 pl-4"
               variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.72, ease: easeOutLux } },
+                hidden: { opacity: 0, y: 18 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.68, ease: easeOutLux } },
               }}
             >
               Luxury Private Tours &amp; Transformational Retreats with Ms. Hawaii United USA 2025
@@ -66,22 +67,23 @@ export default function Home() {
             <motion.div
               className="flex flex-col sm:flex-row gap-4"
               variants={{
-                hidden: { opacity: 0, y: 18 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.68, ease: easeOutLux } },
+                hidden: { opacity: 0, y: 16 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.64, ease: easeOutLux } },
               }}
             >
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.2 }}>
-                <Link to="/contact" className="btn-gold px-9 justify-center shadow-lg w-full sm:w-auto">
-                  Plan Your Experience
-                  <ChevronRight size={20} strokeWidth={2.5} />
-                </Link>
-              </motion.div>
+              <LivingPrimaryCta
+                to="/contact"
+                className="btn-gold px-9 justify-center shadow-lg w-full sm:w-auto"
+              >
+                Plan Your Experience
+                <ChevronRight size={20} strokeWidth={2.5} />
+              </LivingPrimaryCta>
               <motion.a
                 href="#lead-guide"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-[#c9a227] bg-white px-8 py-4 text-[#2a2418] font-medium shadow-md hover:bg-amber-50/90 transition-colors"
-                whileHover={{ scale: 1.02, boxShadow: "0 12px 28px -8px rgba(201,162,39,0.35)" }}
+                whileHover={{ scale: 1.02, boxShadow: "0 12px 28px -8px rgba(201,162,39,0.32)" }}
                 whileTap={{ scale: 0.98 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.28, ease: easeOutLux }}
               >
                 Get the Free Hawaii Guide
                 <span className="text-amber-800 font-semibold">&gt;&gt;</span>
@@ -163,13 +165,13 @@ export default function Home() {
               <motion.article
                 key={card.title}
                 variants={{
-                  hidden: { opacity: 0, y: 36 },
-                  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: easeOutLux } },
+                  hidden: { opacity: 0, y: 32 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.62, ease: easeOutLux } },
                 }}
                 whileHover={{
-                  y: -8,
-                  boxShadow: "0 20px 48px -12px rgba(180, 140, 60, 0.32)",
-                  transition: { duration: 0.35, ease: easeOutLux },
+                  y: -6,
+                  boxShadow: "0 18px 44px -14px rgba(180, 140, 60, 0.28)",
+                  transition: { duration: 0.4, ease: easeOutLux },
                 }}
                 className="group flex flex-col rounded-2xl overflow-hidden bg-white/95 backdrop-blur-[2px] shadow-[0_12px_40px_-12px_rgba(100,80,50,0.2)] border border-white/80 ring-1 ring-amber-100/60"
               >
@@ -469,10 +471,10 @@ export default function Home() {
               Plan your personalized escape today and experience the true spirit!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="btn-gold justify-center">
+              <LivingPrimaryCta to="/contact" className="btn-gold justify-center">
                 Plan your experience
                 <ArrowRight size={20} />
-              </Link>
+              </LivingPrimaryCta>
               <Link
                 to="/tours"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-[#b84838]/35 bg-white/90 px-8 py-4 text-[#2a2418] font-medium hover:bg-white transition-colors shadow-sm"

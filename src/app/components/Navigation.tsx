@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import LivingPrimaryCta from "./LivingPrimaryCta";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,9 +82,14 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Link to="/contact" className="btn-gold !rounded-full px-8 py-3 text-sm tracking-wide shadow-md">
+            <LivingPrimaryCta
+              to="/contact"
+              flowingGradient
+              wrapperClassName="rounded-full"
+              className="btn-gold !rounded-full px-8 py-3 text-sm tracking-wide"
+            >
               Book Now
-            </Link>
+            </LivingPrimaryCta>
           </div>
 
           <button
@@ -118,13 +124,15 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <Link
+              <LivingPrimaryCta
                 to="/contact"
+                flowingGradient
+                wrapperClassName="rounded-full w-full"
+                className="block w-full btn-gold !rounded-full px-8 py-4 text-center"
                 onClick={() => setIsOpen(false)}
-                className="block w-full btn-gold !rounded-full px-8 py-4 text-center shadow-lg"
               >
                 Book Now
-              </Link>
+              </LivingPrimaryCta>
             </div>
           </motion.div>
         )}
